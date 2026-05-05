@@ -1,0 +1,5 @@
+[hidemenubutton] 
+[eval exp="f._system_preview_ks='room1.ks'"] 
+[preload  storage="./data/bgimage/black.png"  ]
+[preload  storage="./data/bgimage/01_.jpg"  ]
+[return] 
