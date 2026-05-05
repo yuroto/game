@@ -1,78 +1,93 @@
 
-[playbgm storage="../bgm/mabataki inst.mp3"]
+[playbgm storage="../bgm/kabin_koishi.mp3"]
 *back
-@bg storage="03_02.jpg"  time=2000
+[bgmopt volume=100]
+[if exp="f.fune==1"] 
+@bg storage="mall2.gif"  time=2000
 
+[else] 
+@bg storage="mall2.gif"  time=2000
+[endif]
 
 *start
+[clickable  x="443"  y="276"  width="100"  height="100"  target="*nanda"  _clickable_img=""  ]
+[clickable  x="398"  y="419"  width="58"  height="100"  target="*kusuri"  _clickable_img=""  ]
+[clickable  x="211"  y="428"  width="63"  height="103"  target="*floded"  _clickable_img=""  ]
+[clickable  x="6"  y="354"  width="120"  height="290"  target="*ki"  _clickable_img=""  ]
+[clickable  x="161"  y="690"  width="140"  height="193"  target="*mm"  _clickable_img=""  ]
+[clickable  x="330"  y="648"  width="393"  height="226"  target="*mizu"  _clickable_img=""  ]
+[clickable  x="545"  y="391"  width="90"  height="98"  target="*ue"  _clickable_img=""  ]
+[clickable  x="458"  y="401"  width="74"  height="108"  target="*oku"  _clickable_img=""  ]
+[clickable  x="1"  y="705"  width="157"  height="255"  target="*out"  _clickable_img=""  ]
 
-[clickable    x="10"  y="128"  width="166"  height="142"  target="*beranda"    ]
-[clickable    x="252"  y="334"  width="53"  height="59"  target="*ana"    ]
-[clickable    x="287"  y="557"  width="100"  height="100"  target="*deguchi"    ]
-[clickable    x="364"  y="533"  width="70"  height="145"  target="*randori"    ]
-[clickable    x="195"  y="632"  width="74"  height="91"  target="*jitensya"    ]
-[clickable    x="126"  y="620"  width="72"  height="166"  target="*merokan"    ]
-[clickable    x="467"  y="347"  width="111"  height="123"  target="*niji"    ]
-[clickable    x="483"  y="466"  width="136"  height="345"  target="*risasyo"    ]
-[clickable    x="312"  y="683"  width="129"  height="212"  target="*temae"    ]
-[clickable    x="1"  y="386"  width="100"  height="509"  target="*mero"    ]
-
-[clickable  x="1"  y="850" width="633" height="90" target="*out" ]
 [s]
 
+*nanda
 
-*beranda
 [layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
 [p]
 [clearfix name=screen][layopt layer="message0" visible="false"] 
 [jump   target="*start"  ]
 
-*ana    
+
+*kusuri
+
 [layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
 [p]
 [clearfix name=screen][layopt layer="message0" visible="false"] 
 [jump   target="*start"  ]
 
-*deguchi
+*floded
+
+
+@bg storage="black.png"  time=2000
+[jump storage="11floded.ks"]
+
+*ki
+
+[layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
+[p]
+[clearfix name=screen][layopt layer="message0" visible="false"] 
+[jump   target="*start"  ]
+
+*mm
+
+[layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
+[p]
+[clearfix name=screen][layopt layer="message0" visible="false"] 
+[jump   target="*start"  ]
+
+*mizu
+
+[layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
+[p]
+[clearfix name=screen][layopt layer="message0" visible="false"] 
+[jump   target="*start"  ]
+
+*ue
+
 [stopbgm]
 @bg storage="black.png"  time=2000
-[jump storage="08mm.ks"]
+[jump storage="15takibit.ks"]
 
-*randori
-[jump  storage="07randori.ks" ]
 
-*jitensya
+*oku
 [layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
-[p]
+[if exp="f.fune==1"] 
+いかだで石ころ海岸へ[p]
 [clearfix name=screen][layopt layer="message0" visible="false"] 
-[jump   target="*start"  ]
-
-*merokan
-[layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
-[p]
+[stopbgm]
+@bg storage="black.png"  time=2000
+[jump storage="17ishikoro.ks"]
+[else] 
+水で満ちておりすすめない[p]
 [clearfix name=screen][layopt layer="message0" visible="false"] 
+
+[endif]
 [jump   target="*start"  ]
-
-*niji
-[layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
-[p]
-[clearfix name=screen][layopt layer="message0" visible="false"] 
-[jump   target="*start"  ]
-
-*risasyo
-[jump storage="05recycle.ks"]
-
-*temae
-[layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
-[p]
-[clearfix name=screen][layopt layer="message0" visible="false"] 
-[jump   target="*start"  ]
-
-*mero
-[jump  storage="06melody.ks" ]
 
 
 *out
 [stopbgm]
 @bg storage="black.png"  time=2000
-[jump storage="02roji.ks"]
+[jump storage="10entrance.ks"]

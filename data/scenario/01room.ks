@@ -40,7 +40,7 @@
 
 
 *start
-[if exp="f.phone && f.light && f.window && f.floor && f.pot && f.gomi && f.kasa && f.fuku && f.furo && f.coffe ==1 && f.book ==1"] 
+[if exp="f.phone && f.light && f.window&& f.furo ==1"] 
 @wait time=4000
 [jump  storage="01room.ks"  target="*out"  ]
 *out
@@ -48,12 +48,14 @@
 [layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
 
 そろそろいくか[p]
-雨の音がやみ、opがながれる[p]
-@bg storage="black.png"  time=2000
-[stopbgm ]
-[layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
-[clearfix name=screen]
+[clearfix name=screen][layopt layer="message0" visible="false"] 
+@wait time=1000
 
+@bg storage="black.png"  time=2000
+
+[stopbgm ]
+[playbgm storage="op.mp3" loop=false] 
+[wbgm]
 [jump  storage="02roji.ks"]
 
 [else] 
@@ -124,25 +126,44 @@
 *kasa
 [layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
 
-傘[p]
+お気に入りのかさ[p]
 [eval exp="f.kasa =1"  ]
 [clearfix name=screen][layopt layer="message0" visible="false"] 
 [jump  storage="01room.ks"  target="*start"  ]
 *fuku
 [layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
 
+洗濯ものがたまってる[p]
 洗わなくちゃだけど、今日はいいや[p]
 [eval exp="f.fuku =1"  ]
 [clearfix name=screen][layopt layer="message0" visible="false"] 
 [jump  storage="01room.ks"  target="*start"  ]
 *furo
+[if exp="f.furo ==1"] 
+
+[layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
+もうさっきはいった[p]
+[clearfix name=screen][layopt layer="message0" visible="false"] 
+@wait time=1000
+
+[else] 
 [layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
 
-体でも清めるか[p]
+シャワーを浴びよう[p]
 [eval exp="f.furo =1"  ]
-
 [clearfix name=screen][layopt layer="message0" visible="false"] 
+@bg storage="black.png"  time=2000
+@wait time=5000
+@bg storage="01_.jpg"  time=2000
+[layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
+ふう[p]
+さっぱりした[p]
+[clearfix name=screen][layopt layer="message0" visible="false"] 
+[endif]
 [jump  storage="01room.ks"  target="*start"  ]
+
+
+
 *coffe
 [layopt layer=message0 page=fore visible=true][button name="screen" graphic="../others/size.png" x=560 y=710 role=fullscreen visible=true layer=message0]
 

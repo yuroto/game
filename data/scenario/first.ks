@@ -22,7 +22,7 @@
 [cm]
 
 
-[jump storage=04syoutengai.ks]
+[jump storage=01room.ks]
 
 
 

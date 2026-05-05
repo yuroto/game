@@ -62,6 +62,7 @@
 
 *machi
 [stopbgm]
+@bg storage="black.png"  time=2000
 [jump  storage="04syoutengai.ks"    ]
 
 

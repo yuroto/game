@@ -42,7 +42,7 @@
 ;autoRecordLabel=false
 ;unReadTextSkip=false
 ;alreadyReadTextColor=0x87cefa
-;numCharacterLayers=0
+;numCharacterLayers=5
 ;scPositionX.left=160
 ;scPositionX.left_center=240
 ;scPositionX.center=320
